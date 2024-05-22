@@ -30,8 +30,7 @@ SELECT
     c.name,
     SUM(p.amount) AS total_paid
 FROM rental_summary c
-JOIN rental r ON c.customer_id = r.customer_id
-JOIN payment p ON r.rental_id = p.rental_id
+JOIN payment p ON c.customer_id = p.customer_id
 GROUP BY c.customer_id;
     
 
